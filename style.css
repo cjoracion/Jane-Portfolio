@@ -1,0 +1,136 @@
+/* layout reset - to normalize the style - you do this cause there are different styles across diff browsers */
+/* Basic Reset */
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Poppins', sans-serif;
+	line-height: 1.6;
+	color: #333;
+	background-color: #f9f9f9;
+}
+
+/* Navbar */
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 10%;
+	background: #222;
+	color: #fff;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+}
+
+.nav-links a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.nav-links a:hover {
+	color: #00bcd4; 
+
+}
+
+/* Hero Section */
+.hero {
+	height: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(to right, #1a1a1a, #333);
+	color: white;
+	text-align: center;
+}
+
+
+.hero-content h2 {
+	font-size: 2.5rem;
+}
+
+.accent {
+	color: #00bcd4;
+}
+
+.hero-content button {
+	margin-top: 20px;
+	padding: 10px 25px;
+	border: none;
+	background-color: #00bcd4;
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.hero-content button:hover {
+	background-color: #0097a7;
+
+}
+/* Sections */
+.section {
+	padding: 80px 10%;
+	text-align: center;
+}
+
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	margin-top: 30px;
+}
+
+.project-card {
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	transition: transform 0.2s;
+}
+
+.project-card:hover {
+	transform: translateY(-5px);
+}
+
+/* Contact Form */
+form {
+display: flex;
+flex-direction: column;
+gap: 15px;
+max-width: 500px;
+margin: 0 auto;
+}
+form input, form textarea {
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+form button {
+background: #00bcd4;
+border: none;
+padding: 10px;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+}
+form button:hover {
+background: #0097a7;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
