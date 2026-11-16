@@ -1,10 +1,107 @@
+#project-title {
+    text-align: center;
+    font-size: 48px;
+    color: #1f2937;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Itinerary Title */
+#itinerary-title-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#title-itinerary {
+    font-size: 36px;
+    color: #1f2937;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #3b82f6;
+    background: transparent;
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+/* Save & Print Buttons */
+#save-print-container {
+    width: min(90%, 600px);
+    margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#save-pdf-btn, #print-btn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0;
+}
+
+#save-pdf-btn:hover, #print-btn:hover {
+    background-color: #2563eb;
+}
+
+/* PRINT STYLES: deletes the buttons */
+@media print {
+    h1,
+    .save-print-container,
+    .add-activity-container,
+    h3,
+    #activities-container,
+    .delete-btn {
+        display: none;
+    }
+    footer {
+        display: none !important;
+    }
+
+    body {
+        webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    #trip-destination {
+        border: none;
+        font-size: 24px;
+    }
+
+    .calendar-grid {
+        min-width: auto;
+        max-width: 100%;
+        margin: 0;
+    }
+
+}
+
+
 /* Calendar Container*/
-.calendar-grid {
-  display: grid;
-  grid-template-columns: auto repeat(7, 1fr);
-  gap: 10px;
+.calendar-scroll-container {
+  width: 90%;
   max-width: 1200px;
   margin: 40px auto;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: minmax(80px, auto) repeat(7, minmax(90px, 1fr));
+  gap: 10px;
+  min-width: 820px;
+  width: 100%;
 }
 
 /*Days of the Week Header*/
@@ -41,6 +138,8 @@
   min-height: 120px;
   padding: 20px;
   text-align: center;
+  min-width: 0;
+  repeat(7, minmax(0, 1fr));
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -48,4 +147,190 @@
 .drop-zone:hover {
   background-color: #d1d5db;
   border-color: #6b7280;
+}
+
+/*Activity Cards*/
+.add-activity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0 10px 0;
+}
+
+#activity-input {
+    width: min(100%, 320px);
+    padding: 10px;
+    border: 1px solid #9ca3af;
+    border-radius: 5px;
+    font: inherit;
+}
+
+#add-activity-btn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-activity-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Activity Big Drop ZOne */
+#activities-container {
+    box-sizing: border-box;
+    width: min(90%, 1200px);
+    min-height: 150px;
+    border: 2px dashed #9ca3af;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #f9fafb;
+    margin: 0 auto 20px;
+}
+
+#activity-title {
+    width: min(90%, 1200px);
+    margin: 32px auto 12px;
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* Dragabble Activity Cards */
+.activity-item {
+    background-color: #3b82f6;
+    border: 1px solid #2563eb;
+    box-sizing: border-box;
+    width: 150px;
+    max-width: 100%;
+    min-height: 100px;
+    padding: 24px 18px;
+    border-radius: 5px;
+    position: relative;
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.activity-text {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+    #project-title {
+        padding: 0 16px;
+        font-size: clamp(30px, 9vw, 40px);
+        line-height: 1.15;
+    }
+
+    #itinerary-title-container {
+        padding: 0 16px;
+        margin-bottom: 24px;
+    }
+
+    #title-itinerary {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: clamp(24px, 7vw, 32px);
+    }
+
+    #save-print-container {
+        margin-bottom: 24px;
+    }
+
+    #save-pdf-btn,
+    #print-btn {
+        flex: 1 1 140px;
+        padding: 10px 12px;
+    }
+
+    .calendar-scroll-container {
+        width: calc(100% - 24px);
+        margin: 28px auto;
+    }
+
+    .grid-header {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+
+    .week-label {
+        padding: 10px;
+    }
+
+    .drop-zone {
+        min-height: 100px;
+        padding: 10px;
+    }
+
+    .add-activity-container {
+        width: calc(100% - 32px);
+        margin: 24px auto 10px;
+    }
+
+    #activity-input,
+    #add-activity-btn {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 44px;
+    }
+
+    h3 {
+        padding: 0 16px;
+    }
+
+    #activities-container {
+        width: calc(100% - 32px);
+        padding: 12px;
+    }
+
+    .activity-item {
+        width: min(150px, 100%);
+    }
+
+    footer {
+        margin-top: 32px;
+        padding: 18px 12px;
+    }
 }

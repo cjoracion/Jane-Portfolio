@@ -1,12 +1,27 @@
+<!--Simple Travel Itinerary Planner by Jane Oracion-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Travel Itinerary</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Simple Travel Itinerary</h1>
+    <h1 id="project-title">Simple Travel Itinerary</h1>
+    <!-- Itinerary Title Input -->
+    <div id="itinerary-title-container">
+        <input type="text" id="title-itinerary" placeholder="Enter Itinerary Title">
+    </div>
+
+    <!-- Save as PDF & Print Button -->
+    <div id="save-print-container">
+        <button id="save-pdf-btn">Save as PDF</button>
+        <button id="print-btn">Print Itinerary</button>
+    </div>
+
+    <!-- Calendar Grid -->
+    <div class="calendar-scroll-container" role="region" aria-label="Weekly calendar. Scroll horizontally to view all days." tabindex="0">
     <div class="calendar-grid">
         <!-- Row 1: Days of the week-->
         <div class="grid-header empty-cell"></div>
@@ -68,8 +83,23 @@
         <div class="drop-zone"></div>
         <div class="drop-zone"></div>
     </div>
+    </div>
+
+<!--Add Activity-->
+<form id="activity-form" class="add-activity-container">
+    <input type="text" id="activity-input" placeholder="Enter activity name" aria-label="Activity name" required>
+    <button id="add-activity-btn" type="submit">Add Activity</button>
+</form>
+
+<h3 id="activity-title">Activities</h3>
+<div class="activities-container" id="activities-container">
+    <!-- Activities Container: Big Drop Zone -->
+</div>
 
 </body>
 <footer>
-    <p>&copy; 2024 Simple Travel Itinerary. All rights reserved. Jane Oracion</p>
+    <p>&copy; Jane Oracion. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
 </html>
