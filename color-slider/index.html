@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Color Slider</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 id="title-name">HEX COLOR SLIDER</h1>
+
+<div id="slider-background" class="slider-bg">
+<!-- The visual preview box -->
+<div id="color-preview" class="preview-box"></div>
+
+<!-- The text display for the Hex Code and CSS -->
+<h2 id="hex-display">#000000</h2>
+<p id="css-code">background-color: #000000;</p>
+
+<!-Copy to Clipboard Section -->
+<div class="copy-section">
+	<input type="text" id="hex-copy-box" value="#000000" readonly>
+	<button id="copy-btn">Copy Hex</button>
+</div>
+
+<!-- The Sliders -->
+<div class="sliders">
+  <label>Red: <input type="range" id="red-slider" min="0" max="255" value="0"></label>
+  <br>
+  <label>Green: <input type="range" id="green-slider" min="0" max="255" value="0"></label>
+  <br>
+  <label>Blue: <input type="range" id="blue-slider" min="0" max="255" value="0"></label>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+<footer> 
+
+<p id="footer-txt"> Made by Jane Oracion  </p>
+	
+
+</footer>
+</html>

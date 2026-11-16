@@ -1,5 +1,3 @@
-/* layout reset - to normalize the style - you do this cause there are different styles across diff browsers */
-/* Basic Reset */
 
 *{
 	margin: 0;
@@ -47,7 +45,8 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: linear-gradient(to right, #1a1a1a, #333);
+	background: #EEAECA;
+background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
 	color: white;
 	text-align: center;
 }
@@ -99,6 +98,89 @@ body{
 .project-card:hover {
 	transform: translateY(-5px);
 }
+
+/*Project 1 Main container */
+#project-1 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 50px;
+	max-width: 1100px;
+	margin: 80px auto;
+	padding: 100px;
+	border-radius: 12px;
+	background: #f3f4f6;
+}
+
+/*Left Side*/
+.project-box {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.project-info h2 {
+	font-family: sans-serif;
+	font-size: 32px;
+	color: #1f2937;
+	margin-top: 0;
+	margin-bottom: 16px;
+}
+
+.project-desc {
+	font-family: sans-serif;
+	font-size: 18px;
+	color: #4b5563;
+	line-height: 1.6;
+	margin-bottom: 30px;
+}
+
+/* Button Link to project */
+.project-link {
+	display: inline-block;
+	align-self: flex-start;
+	background-color: #3b82f6;
+	color: white;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 12px 24px;
+	border-radius: 8px;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-link:hover {
+	background-color: #2563eb;
+	transform: translateY(-2px);
+}
+
+/*Poject Image*/
+.project-image {
+	flex: 1;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border: 1px solid white;
+	background-color: #f9fafb;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.project-image img {
+	max-width: 100%;
+	max-height: 100%;
+	border-radius: 12px;
+	display: block;
+	object-fit: cover;
+}
+
+
+/* Mobile */
+
+
 
 /* Contact Form */
 form {
